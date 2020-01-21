@@ -1,4 +1,5 @@
-import React from 'react';
-import SideBar from './../components/Common/Layout';
+// import React from 'react';
 
-export default () => <SideBar />
+export default () => <div>
+    This is login page
+</div>
