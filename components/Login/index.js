@@ -28,7 +28,7 @@ const Login = () => {
     return (
         <Container>
             <LogoContainer>
-                <Image src="http://apply.attainu.com/assets/img/logo_180x180.png" width="80px" height="80px" />
+                <Image src="/images/logo.png" width="80px" height="80px" />
             </LogoContainer>
             <LoginForm />
         </Container>
