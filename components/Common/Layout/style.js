@@ -1,13 +1,18 @@
 import styled, { css, createGlobalStyle } from 'styled-components';
 import { Icon, Layout, Menu } from 'antd';
 
-const { Sider, Content } = Layout;
+const { Item } = Menu;
+const { Sider, Content, Header } = Layout;
 
 const GlobalStyle = createGlobalStyle`
     html,
     body {
         margin: 0;
         padding: 0
+    },
+
+    .ant-menu:not(.ant-menu-horizontal) .ant-menu-item-selected {
+        background-color: #fbb300 !important;
     }
 `;
 
@@ -58,8 +63,10 @@ const SiderX = styled(Sider)`
     background-color: #123c69;
 `;
 
-const MenuItemX = styled(Menu.Item)`
-    
+const MenuItemX = styled(Item)`
+    &&&.ant-menu-item-selected {
+        background-color: #fbb300;
+    }
 `;
 
 const ContentX = styled(Content)`
@@ -71,6 +78,12 @@ const ContentX = styled(Content)`
     border-radius: 4px;
 `;
 
+const HeaderX = styled(Header)`
+    background: #fff;
+    padding: 0;
+    box-shadow: 0 10px 30px 0 rgba(82,63,105,.08);
+`;
+
 
 export {
     Logo,
@@ -79,5 +92,6 @@ export {
     MenuItemX,
     Span,
     ContentX,
+    HeaderX,
     GlobalStyle
 };
