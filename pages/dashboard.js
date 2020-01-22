@@ -1,3 +1,5 @@
 import MasterLayout from './../components/Common/Layout';
 
-export default () => <MasterLayout />
+export default () => <MasterLayout>
+    <div>Dashboard</div>
+</MasterLayout>
