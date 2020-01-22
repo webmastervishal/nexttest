@@ -9,10 +9,6 @@ const GlobalStyle = createGlobalStyle`
     body {
         margin: 0;
         padding: 0
-    },
-
-    .ant-menu:not(.ant-menu-horizontal) .ant-menu-item-selected {
-        background-color: #fbb300 !important;
     }
 `;
 
@@ -66,6 +62,10 @@ const SiderX = styled(Sider)`
 const MenuItemX = styled(Item)`
     &&&.ant-menu-item-selected {
         background-color: #fbb300;
+    },
+
+    &&&.ant-menu-item::after {
+       border-right: 3px solid #ffb300; 
     }
 `;
 
