@@ -1,5 +1,14 @@
-// import React from 'react';
+import { Container } from "../pageStyles"
+import { GlobalStyle } from "./../components/Common/Layout/style"
+import Login from "./../components/Login"
 
-export default () => <div>
-    This is login page
-</div>
+export default () => {
+    return (
+        <>
+            <GlobalStyle />
+            <Container>
+                <Login />
+            </Container>
+        </>
+    )
+}

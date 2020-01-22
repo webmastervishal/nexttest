@@ -1,7 +1,15 @@
-import styled from 'styled-components';
+import styled, { createGlobalStyle } from 'styled-components';
 import { Icon, Layout } from 'antd';
 
 const { Sider } = Layout;
+
+const GlobalStyle = createGlobalStyle`
+    html,
+    body {
+        margin: 0;
+        padding: 0
+    }
+`;
 
 const Logo = styled.div`
     height: 32px;
@@ -28,5 +36,6 @@ const SiderX = styled(Sider)`
 export {
     Logo,
     IconX,
-    SiderX
+    SiderX,
+    GlobalStyle
 };
