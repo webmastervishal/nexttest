@@ -5,7 +5,7 @@ const { Header, Content } = Layout;
 
 function MasterLayout() {
 
-    const [collapsed, toggle] = useState(false);
+    const [collapsed, setCollapsed] = useState(false);
 
     return (
         <Layout>
@@ -31,7 +31,7 @@ function MasterLayout() {
                     <IconX
                         className="trigger"
                         type={collapsed ? 'menu-unfold' : 'menu-fold'}
-                        onClick={() => toggle(!collapsed)}
+                        onClick={() => setCollapsed(!collapsed)}
                     />
                 </Header>
                 <Content
