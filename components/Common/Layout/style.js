@@ -1,6 +1,8 @@
 import styled, { css, createGlobalStyle } from 'styled-components';
 import { Icon, Layout, Menu } from 'antd';
 
+import media from './../media';
+
 const { Item } = Menu;
 const { Sider, Content, Header } = Layout;
 
@@ -57,6 +59,28 @@ const IconX = styled(Icon)`
 const SiderX = styled(Sider)`
     height: 100vh;
     background-color: #123c69;
+    flex: 0 0 250px !important;
+    max-width: none !important;
+    min-width: none !important;
+
+
+    &&&.ant-layout-sider-collapsed {
+        flex: 0 0 80px !important;
+    }
+
+
+    ${media.mobile`
+        flex: 0 0 200px !important;
+        max-width: none !important;
+        min-width: none !important; 
+    `}
+
+    ${media.smalldevice`
+        flex: 0 0 150px !important; 
+        max-width: none !important;
+        min-width: none !important;
+    `}
+    
 `;
 
 const MenuItemX = styled(Item)`

@@ -1,7 +1,8 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Layout, Menu, Icon } from 'antd';
 import Link from 'next/link';
 
+import Image from './../UIElements/image';
 import { Logo, IconX, SiderX, MenuItemX, Span, ContentX, HeaderX } from './style';
 const { Footer } = Layout;
 
@@ -9,13 +10,17 @@ const MasterLayout = (props) => {
 
     const [collapsed, setCollapsed] = useState(false);
 
+    useEffect(() => {
+        window.screen.width <= 992 ? setCollapsed(true) : setCollapsed(false);
+    }, []);
+
     return (
         <Layout>
             <SiderX trigger={null} collapsible collapsed={collapsed}>
                 <Link href="/">
                     <Logo>
-                        <img src="/images/logo.png" width="40px" height="40px" />
-                        {!collapsed && <Span for="logo">AttainU</Span>}
+                        <Image src="/images/logo.png" width="40px" height="40px" />
+                        {!collapsed && <Span htmlFor="logo">AttainU</Span>}
                     </Logo>
                 </Link>
                 <Menu mode="inline" defaultSelectedKeys={['1']} style={{ backgroundColor: '#123c69' }}>
