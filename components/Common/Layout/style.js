@@ -32,7 +32,7 @@ const menuitem = css`
 `;
 
 const Span = styled.span`
-    ${props => props.for === 'logo' ? logotext : menuitem}
+    ${props => props.htmlFor === 'logo' ? logotext : menuitem}
 `;
 const menuicon = css`
     color: #fff;
@@ -51,7 +51,7 @@ const togglemenu = css`
 `;
 
 const IconX = styled(Icon)`
-    ${props => props.for === 'menuicon' ? menuicon : togglemenu}
+    ${props => props.htmlFor === 'menuicon' ? menuicon : togglemenu}
 `;
 
 const SiderX = styled(Sider)`
