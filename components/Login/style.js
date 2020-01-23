@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { Input } from 'antd';
+import media from "./../Common/media"
 
 export const Container = styled.div`
     height: 450px;
@@ -8,6 +9,15 @@ export const Container = styled.div`
     background-color: #ffffff;
     box-shadow: 0 0 7px 5px rgba(0, 0, 0, 0.5);
     position: relative;
+
+    ${media.mobile`
+        width: 350px;
+    `}
+
+    ${media.smalldevice`
+        width: 300px;
+        height: 400px;
+    `}
 `;
 
 export const LogoContainer = styled.div`
@@ -22,7 +32,16 @@ export const LogoContainer = styled.div`
     box-shadow: 0 5px 10px 3px rgba(0, 0, 0, 0.5);
     display: flex;
     align-items: center;
-    justify-content: center
+    justify-content: center;
+
+    ${media.mobile`
+        width: 310px;
+    `}
+
+    ${media.smalldevice`
+        width: 260px;
+        height: 120px;
+    `}
 `;
 
 export const FormContainer = styled.div`
@@ -31,6 +50,16 @@ export const FormContainer = styled.div`
     height: 290px;
     margin: 20px;
     width: 360px;
+
+    ${media.mobile`
+        width: 310px;
+    `}
+
+    ${media.smalldevice`
+        width: 260px;
+        height: 240px;
+        margin-top: 0px;
+    `}
 `;
 
 export const InputX = styled(Input)`
