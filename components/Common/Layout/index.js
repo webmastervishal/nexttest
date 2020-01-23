@@ -12,20 +12,20 @@ const MasterLayout = (props) => {
             <SiderX trigger={null} collapsible collapsed={collapsed}>
                 <Logo>
                     <img src="/images/logo.png" width="40px" height="40px" />
-                    {!collapsed && <Span for="logo">AttainU</Span>}
+                    {!collapsed && <Span htmlFor="logo">AttainU</Span>}
                 </Logo>
                 <Menu mode="inline" defaultSelectedKeys={['1']} style={{ backgroundColor: '#123c69' }}>
                     <MenuItemX key="1">
-                        <IconX type="user" for="menuicon" />
-                        <Span for="menuitem">Dashboard</Span>
+                        <IconX type="user" htmlFor="menuicon" />
+                        <Span htmlFor="menuitem">Dashboard</Span>
                     </MenuItemX>
                     <MenuItemX key="2">
-                        <IconX type="video-camera" for="menuicon" />
-                        <Span for="menuitem">Users</Span>
+                        <IconX type="video-camera" htmlFor="menuicon" />
+                        <Span htmlFor="menuitem">Users</Span>
                     </MenuItemX>
                     <MenuItemX key="3">
-                        <IconX type="upload" for="menuicon" />
-                        <Span for="menuitem">Batches</Span>
+                        <IconX type="upload" htmlFor="menuicon" />
+                        <Span htmlFor="menuitem">Batches</Span>
                     </MenuItemX>
                 </Menu>
             </SiderX>
@@ -35,7 +35,7 @@ const MasterLayout = (props) => {
                         className="trigger"
                         type="menu"
                         onClick={() => setCollapsed(!collapsed)}
-                        for="togglemenu"
+                        htmlFor="togglemenu"
                     />
                 </Header>
                 <ContentX>
