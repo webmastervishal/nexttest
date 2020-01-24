@@ -59,6 +59,7 @@ export const FormContainer = styled.div`
         width: 260px;
         height: 240px;
         margin-top: 0px;
+        top: 150px;
     `}
 `;
 
@@ -70,5 +71,24 @@ export const InputX = styled(Input)`
 
     :focus{
         box-shadow: none;
+    }
+`;
+
+export const ButtonContainer = styled.div`
+    display: flex;
+    justify-content: center;
+    margin-top: 20px
+`;
+
+export const Span = styled.span`
+    color: #BFBFBF;
+    margin-right: 5px;
+`;
+
+export const Anchor = styled.a`
+    color: #123c69 !important;
+
+    :hover{
+        opacity: 0.8
     }
 `;
