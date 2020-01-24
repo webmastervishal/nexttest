@@ -33,8 +33,14 @@ const menuitem = css`
     color: #fff;
 `;
 
+const user = css`
+    font-size: 16px;
+`;
+
 const Span = styled.span`
-    ${props => props.htmlFor === 'logo' ? logotext : menuitem}
+    ${props => props.htmlFor === 'logo' && logotext};
+    ${props => props.htmlFor === 'menuitem' && menuitem};
+    ${props => props.htmlFor === 'user' && user};
 `;
 const menuicon = css`
     color: #fff;
@@ -52,8 +58,23 @@ const togglemenu = css`
     }
 `;
 
+const usericon = css`
+    padding: 5px;
+    border-radius: 50%;
+    border: 1px solid #123c69;
+    margin: 5px;
+    font-weight: bold;
+
+    :hover {
+        background-color: #123c69;
+        color: #ffb300;
+    }
+`;
+
 const IconX = styled(Icon)`
-    ${props => props.htmlFor === 'menuicon' ? menuicon : togglemenu}
+    ${props => props.htmlFor === 'menuicon' && menuicon};
+    ${props => props.htmlFor === 'togglemenu' && togglemenu};
+    ${props => props.htmlFor === 'usericon' && usericon};
 `;
 
 const SiderX = styled(Sider)`
@@ -108,6 +129,17 @@ const HeaderX = styled(Header)`
     box-shadow: 0 10px 30px 0 rgba(82,63,105,.08);
 `;
 
+const UserProfile = styled.a`
+    color: #000;
+    height: 64px;
+    display: block;
+    text-align: right;
+    padding-right: 20px;
+
+    :hover {
+        color: #000;
+    }
+`;
 
 export {
     Logo,
@@ -117,5 +149,6 @@ export {
     Span,
     ContentX,
     HeaderX,
-    GlobalStyle
+    GlobalStyle,
+    UserProfile
 };
