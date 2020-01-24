@@ -49,15 +49,15 @@ const MasterLayout = (props) => {
                 </Link>
                 <Menu mode="inline" defaultSelectedKeys={['1']} style={{ backgroundColor: '#123c69' }}>
                     <MenuItemX key="1">
-                        <IconX type="user" htmlFor="menuicon" />
+                        <IconX type="home" theme="filled" htmlFor="menuicon" />
                         <Span htmlFor="menuitem">Dashboard</Span>
                     </MenuItemX>
                     <MenuItemX key="2">
-                        <IconX type="video-camera" htmlFor="menuicon" />
+                        <IconX type="user" themed="filled" htmlFor="menuicon" />
                         <Span htmlFor="menuitem">Users</Span>
                     </MenuItemX>
                     <MenuItemX key="3">
-                        <IconX type="upload" htmlFor="menuicon" />
+                        <IconX type="book" themed="book" htmlFor="menuicon" />
                         <Span htmlFor="menuitem">Batches</Span>
                     </MenuItemX>
                 </Menu>
