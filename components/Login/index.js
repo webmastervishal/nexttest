@@ -1,14 +1,7 @@
-import { Container, LogoContainer, FormContainer, InputX } from "./style"
+import Link from 'next/link'
+import { Container, LogoContainer, FormContainer, InputX, ButtonContainer, Span, Anchor } from "./style"
 import Image from "./../Common/UIElements/image"
 import ButtonX from "./../Common/UIElements/button"
-import styled from "styled-components"
-
-
-const ButtonContainer = styled.div`
-    display: flex;
-    justify-content: center;
-    margin-top: 20px
-`;
 
 const LoginForm = () => {
     return (
@@ -20,6 +13,9 @@ const LoginForm = () => {
                     <ButtonX bgcolor="#ffb300" size="large">Login</ButtonX>
                 </ButtonContainer>
             </form>
+            <ButtonContainer>
+                <Span>Forgot Password?</Span><Link href="/"><Anchor>Click here</Anchor></Link>
+            </ButtonContainer>
         </FormContainer>
     )
 }
