@@ -35,14 +35,14 @@ const BatchDetails = () => {
             >
               <EditForm layout="inline">
                 <Form.Item label="Batch">
-                  <Select defaultValue="Falcon" style={{ width: 120 }}>
+                  <Select defaultValue="Falcon">
                     <Option value="Pheonix">Pheonix</Option>
                     <Option value="Nightingale">Nightingale</Option>
                     <Option value="Eagle">Eagle</Option>
                   </Select>
                 </Form.Item>
                 <Form.Item label="Reason">
-                  <Select defaultValue="Reason" style={{ width: 120 }}>
+                  <Select defaultValue="Poor Performance">
                     <Option value="Poor Performance">Poor Performance</Option>
                     <Option value="Test Scores">Test Scores</Option>
                     <Option value="Attendance">Attendance</Option>
