@@ -1,0 +1,25 @@
+{
+  "editor.detectIndentation": false,
+  "editor.tabCompletion": "on",
+  "editor.tabSize": 2,
+  "editor.trimAutoWhitespace": true,
+  "editor.formatOnSave": true,
+  "editor.formatOnPaste": true,
+  "files.exclude": {
+    "**/.DS_Store": true,
+    "**/.git": true,
+    "**/.hg": true,
+    "**/.svn": true,
+    "**/CVS": true,
+    "**/node_modules": true,
+    "dist": true
+  },
+  "files.insertFinalNewline": true,
+  "files.trimTrailingWhitespace": true,
+  "eslint.run": "onSave"
+  // "eslint.nodePath": "./node_modules",
+  // "eslint.validate": ["javascript"]
+  // "editor.codeActionsOnSave": {
+  //     "source.fixAll.eslint": true
+  // }
+}
