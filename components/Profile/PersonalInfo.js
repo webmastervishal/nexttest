@@ -1,5 +1,6 @@
-import { Radio } from "antd";
 import { useState } from "react";
+import { Radio } from "antd";
+
 import {
   CardX,
   ListX,
@@ -11,8 +12,9 @@ import {
 import EditModal from "./EditModal";
 import EditForm from "./EditForm";
 
-const PersonalInfo = props => {
-  const [value, setvalue] = useState(null);
+const PersonalInfo = () => {
+  const [editGenderModalVisible, seteditGenderModalVisible] = useState(false);
+  const [genderValue, setGendervalue] = useState(null);
   return (
     <CardX>
       <ListX header={<ListHeader>Personal Information</ListHeader>}>
@@ -25,16 +27,21 @@ const PersonalInfo = props => {
         <ListItemX>
           <TypographyTextX>Gender</TypographyTextX>
           <span>
-            Male <IconX type="edit" theme="filled" onClick={props.showModal} />
+            Male
+            <IconX
+              type="edit"
+              theme="filled"
+              onClick={() => seteditGenderModalVisible(true)}
+            />
             <EditModal
-              visible={props.visible}
-              setvisible={props.setvisible}
               title="Gender"
+              visible={editGenderModalVisible}
+              setvisible={seteditGenderModalVisible}
             >
               <EditForm>
                 <Radio.Group
-                  onChange={e => setvalue(e.target.value)}
-                  value={value}
+                  onChange={e => setGendervalue(e.target.value)}
+                  value={genderValue}
                 >
                   <Radio value={1}>Male</Radio>
                   <Radio value={2}>Female</Radio>
