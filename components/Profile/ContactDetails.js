@@ -52,7 +52,7 @@ const ContactDetails = () => {
         <ListItemX>
           <TypographyTextX>Address</TypographyTextX>
           <span>
-            HSR Layout, Bangalore{" "}
+            HSR Layout, Bangalore
             <IconX
               type="edit"
               theme="filled"

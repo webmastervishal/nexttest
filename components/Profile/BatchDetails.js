@@ -1,3 +1,8 @@
+import { useState } from "react";
+import { Form, Select } from "antd";
+
+const { Option } = Select;
+
 import {
   CardX,
   ListX,
@@ -7,13 +12,45 @@ import {
   IconX
 } from "./style";
 import EditModal from "./EditModal";
+import EditForm from "./EditForm";
 
 const BatchDetails = () => {
+  const [editBatchModalVisible, seteditBatchModalVisible] = useState(false);
   return (
     <CardX>
       <ListX header={<ListHeader>Batch Details</ListHeader>}>
         <ListItemX>
-          <TypographyTextX>Name</TypographyTextX> <span>Falcon</span>
+          <TypographyTextX>Name</TypographyTextX>{" "}
+          <span>
+            Falcon
+            <IconX
+              type="edit"
+              theme="filled"
+              onClick={() => seteditBatchModalVisible(true)}
+            />
+            <EditModal
+              title="Batch"
+              visible={editBatchModalVisible}
+              setvisible={seteditBatchModalVisible}
+            >
+              <EditForm layout="inline">
+                <Form.Item label="Batch">
+                  <Select defaultValue="Falcon" style={{ width: 120 }}>
+                    <Option value="Pheonix">Pheonix</Option>
+                    <Option value="Nightingale">Nightingale</Option>
+                    <Option value="Eagle">Eagle</Option>
+                  </Select>
+                </Form.Item>
+                <Form.Item label="Reason">
+                  <Select defaultValue="Reason" style={{ width: 120 }}>
+                    <Option value="Poor Performance">Poor Performance</Option>
+                    <Option value="Test Scores">Test Scores</Option>
+                    <Option value="Attendance">Attendance</Option>
+                  </Select>
+                </Form.Item>
+              </EditForm>
+            </EditModal>
+          </span>
         </ListItemX>
         <ListItemX>
           <TypographyTextX>Instructor</TypographyTextX>

@@ -1,5 +1,7 @@
+import { Form } from "antd";
+
 const EditForm = props => {
-  return <form>{props.children}</form>;
+  return <Form layout={props.layout}>{props.children}</Form>;
 };
 
 export default EditForm;
