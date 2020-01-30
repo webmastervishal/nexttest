@@ -13,7 +13,7 @@ const EditModal = props => {
 
   return (
     <Modal
-      title="Basic Modal"
+      title={props.title}
       visible={props.visible}
       onOk={handleOk}
       onCancel={handleCancel}

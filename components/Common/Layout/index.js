@@ -19,7 +19,7 @@ const dropdownmenu = (
   <Menu>
     <Menu.Item key="0">
       <Link href="/profile/[id]" as="/profile/1">
-        <a href="#">
+        <a>
           <Icon type="user" /> Profile
         </a>
       </Link>
