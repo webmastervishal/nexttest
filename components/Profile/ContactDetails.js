@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Input } from "antd";
+const { TextArea } = Input;
 
 import {
   CardX,
@@ -15,6 +16,8 @@ import EditForm from "./EditForm";
 const ContactDetails = () => {
   const [editPhoneModalVisible, seteditPhoneModalVisible] = useState(false);
   const [phoneValue, setphoneValue] = useState(null);
+  const [editAddressModalVisible, seteditAddressModalVisible] = useState(false);
+  const [addressValue, setaddressValue] = useState(null);
   return (
     <CardX>
       <ListX header={<ListHeader>Contact Details</ListHeader>}>
@@ -49,7 +52,26 @@ const ContactDetails = () => {
         <ListItemX>
           <TypographyTextX>Address</TypographyTextX>
           <span>
-            HSR Layout, Bangalore <IconX type="edit" theme="filled" />
+            HSR Layout, Bangalore{" "}
+            <IconX
+              type="edit"
+              theme="filled"
+              onClick={() => seteditAddressModalVisible(true)}
+            />
+            <EditModal
+              title="Address"
+              visible={editAddressModalVisible}
+              setvisible={seteditAddressModalVisible}
+            >
+              <EditForm>
+                <TextArea
+                  rows={4}
+                  placeholder="Enter Address"
+                  value={addressValue}
+                  onChange={e => setaddressValue(e.target.value)}
+                />
+              </EditForm>
+            </EditModal>
           </span>
         </ListItemX>
       </ListX>
