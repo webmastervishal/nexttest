@@ -93,15 +93,15 @@ const SiderX = styled(Sider)`
     ${media.mobile`
         flex: 0 0 200px !important;
         max-width: none !important;
-        min-width: none !important; 
+        min-width: none !important;
     `}
 
     ${media.smalldevice`
-        flex: 0 0 150px !important; 
+        flex: 0 0 150px !important;
         max-width: none !important;
         min-width: none !important;
     `}
-    
+
 `;
 
 const MenuItemX = styled(Item)`
@@ -110,7 +110,7 @@ const MenuItemX = styled(Item)`
     },
 
     &&&.ant-menu-item::after {
-       border-right: 3px solid #ffb300; 
+       border-right: 3px solid #ffb300;
     }
 `;
 
@@ -121,6 +121,11 @@ const ContentX = styled(Content)`
     min-height: 280;
     box-shadow: 0 0 13px 0 rgba(82,63,105,.1);
     border-radius: 4px;
+
+    ${media.mobile`
+      margin: 8px;
+      padding: 12px;
+    `}
 `;
 
 const HeaderX = styled(Header)`
@@ -142,13 +147,13 @@ const UserProfile = styled.a`
 `;
 
 export {
-    Logo,
-    IconX,
-    SiderX,
-    MenuItemX,
-    Span,
-    ContentX,
-    HeaderX,
-    GlobalStyle,
-    UserProfile
+  Logo,
+  IconX,
+  SiderX,
+  MenuItemX,
+  Span,
+  ContentX,
+  HeaderX,
+  GlobalStyle,
+  UserProfile
 };
