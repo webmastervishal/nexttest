@@ -1,5 +1,7 @@
 import MasterLayout from "./../components/Common/Layout";
 import LineChart from "../components/Common/Charts/LineChart";
+import Widget from "../components/Common/Charts/Widget";
+import { Row, Col } from "antd";
 
 const data = [
   {
@@ -48,8 +50,18 @@ const data = [
 
 export default () => (
   <MasterLayout>
-    <div>
-      <LineChart data={data} />
-    </div>
+    <Row style={{ margin: '10px 0 20px 0' }}>
+      <Widget />
+      <Widget />
+      <Widget />
+      <Widget />
+    </Row>
+
+    <Row>
+      <Col span={24}>
+        <LineChart data={data} />
+      </Col>
+    </Row>
+
   </MasterLayout>
 );
