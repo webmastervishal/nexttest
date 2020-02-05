@@ -48,7 +48,7 @@ const MasterLayout = props => {
   }, []);
 
   return (
-    <Layout>
+    <Layout style={{ height: '100vh' }}>
       <SiderX trigger={null} collapsible collapsed={collapsed}>
         <Link href="/">
           <Logo>

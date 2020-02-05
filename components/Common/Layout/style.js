@@ -78,7 +78,6 @@ const IconX = styled(Icon)`
 `;
 
 const SiderX = styled(Sider)`
-    height: 100vh;
     background-color: #123c69;
     flex: 0 0 250px !important;
     max-width: none !important;
@@ -115,15 +114,10 @@ const MenuItemX = styled(Item)`
 `;
 
 const ContentX = styled(Content)`
-    margin: 24px 16px 0 16px;
     padding: 24px;
-    background: #fff;
     min-height: 280;
-    box-shadow: 0 0 13px 0 rgba(82,63,105,.1);
-    border-radius: 4px;
 
     ${media.mobile`
-      margin: 8px;
       padding: 12px;
     `}
 `;
