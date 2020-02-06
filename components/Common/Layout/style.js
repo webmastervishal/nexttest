@@ -119,6 +119,7 @@ const ContentX = styled(Content)`
 
     ${media.mobile`
       padding: 12px;
+      min-height: auto;
     `}
 `;
 

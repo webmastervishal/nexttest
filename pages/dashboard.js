@@ -1,9 +1,8 @@
 import MasterLayout from "./../components/Common/Layout";
-import LineChart from "../components/Common/Charts/LineChart";
-import Widget from "../components/Common/Charts/Widget";
+import { LineChart, Widget } from "../components/Common/Charts";
 import { Row, Col } from "antd";
 
-const data = [
+const instructorData = [
   {
     name: '1st', Vishal: 3.5, Shahrukh: 4, amt: 2400,
   },
@@ -48,18 +47,64 @@ const data = [
   }
 ];
 
+const studentData = [
+  {
+    name: 'Page A', uv: 4000, pv: 2400, amt: 2400,
+  },
+  {
+    name: 'Page B', uv: 3000, pv: 1398, amt: 2210,
+  },
+  {
+    name: 'Page C', uv: 2000, pv: 9800, amt: 2290,
+  },
+  {
+    name: 'Page D', uv: 2780, pv: 3908, amt: 2000,
+  },
+  {
+    name: 'Page E', uv: 1890, pv: 4800, amt: 2181,
+  },
+  {
+    name: 'Page F', uv: 2390, pv: 3800, amt: 2500,
+  },
+  {
+    name: 'Page G', uv: 3490, pv: 4300, amt: 2100,
+  },
+];
+
 export default () => (
   <MasterLayout>
     <Row style={{ margin: '10px 0 20px 0' }}>
-      <Widget />
-      <Widget />
-      <Widget />
-      <Widget />
+      <Widget
+        title='Total Students'
+        count='1,550'
+        chart='area'
+        chartdata={studentData}
+      />
+      <Widget
+        title='Total Instructors'
+        count='10'
+        chart='bar'
+        chartdata={studentData}
+      />
+      <Widget
+        title='Total Batches'
+        count='7'
+        chart='area'
+        chartdata={studentData}
+
+      />
+      <Widget
+        title='Total Students'
+        count='1,550'
+        chart='bar'
+        chartdata={studentData}
+
+      />
     </Row>
 
     <Row>
       <Col span={24}>
-        <LineChart data={data} />
+        <LineChart data={instructorData} />
       </Col>
     </Row>
 
