@@ -1,6 +1,9 @@
 import { useState, useEffect } from "react";
 import { Layout, Menu, Row, Col, Dropdown, Icon } from "antd";
 import Link from "next/link";
+import { useRouter, Router } from 'next/router';
+import { useQuery } from '@apollo/react-hooks';
+import gql from 'graphql-tag';
 
 import Image from "./../UIElements/image";
 import {
@@ -13,7 +16,14 @@ import {
   HeaderX,
   UserProfile
 } from "./style";
+
 const { Footer } = Layout;
+
+const GET_SIDEBAR = gql`
+  {
+    sidebar @client
+  }
+`;
 
 const dropdownmenu = (
   <Menu>
@@ -38,14 +48,23 @@ const dropdownmenu = (
   </Menu>
 );
 
+
 const MasterLayout = props => {
+  const { data } = useQuery(GET_SIDEBAR);
+  console.log('data', data);
   const [collapsed, setCollapsed] = useState(false);
   const [vw, setVW] = useState(0);
+  const [menuitem, setMenuItem] = useState("1");
+  const router = useRouter();
 
   useEffect(() => {
     window.screen.width <= 992 ? setCollapsed(true) : setCollapsed(false);
     setVW(window.screen.width);
   }, []);
+
+  const handleMenuClick = (key) => {
+    setMenuItem(key.key);
+  }
 
   return (
     <Layout style={{ height: '100vh' }}>
@@ -58,20 +77,34 @@ const MasterLayout = props => {
         </Link>
         <Menu
           mode="inline"
-          defaultSelectedKeys={["1"]}
+          defaultSelectedKeys={[menuitem]}
           style={{ backgroundColor: "#123c69" }}
         >
-          <MenuItemX key="1">
-            <IconX type="home" theme="filled" htmlFor="menuicon" />
-            <Span htmlFor="menuitem">Dashboard</Span>
+          <MenuItemX key="1" onClick={handleMenuClick}>
+            <Link href="/dashboard">
+              <div>
+                <IconX type="home" theme="filled" htmlFor="menuicon" />
+                <Span htmlFor="menuitem">Dashboard</Span>
+              </div>
+            </Link>
           </MenuItemX>
-          <MenuItemX key="2">
-            <IconX type="user" themed="filled" htmlFor="menuicon" />
-            <Span htmlFor="menuitem">Users</Span>
+          <MenuItemX key="2" onClick={handleMenuClick}>
+            <Link href="/students">
+              <div>
+                <IconX type="user" themed="filled" htmlFor="menuicon" />
+                <Span htmlFor="menuitem">Students</Span>
+
+              </div>
+            </Link>
           </MenuItemX>
-          <MenuItemX key="3">
-            <IconX type="book" themed="book" htmlFor="menuicon" />
-            <Span htmlFor="menuitem">Batches</Span>
+          <MenuItemX key="3" onClick={handleMenuClick}>
+            <Link href="/batches">
+              <div>
+                <IconX type="book" themed="book" htmlFor="menuicon" />
+                <Span htmlFor="menuitem">Batches</Span>
+
+              </div>
+            </Link>
           </MenuItemX>
         </Menu>
       </SiderX>

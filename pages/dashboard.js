@@ -71,42 +71,50 @@ const studentData = [
   },
 ];
 
-export default () => (
-  <MasterLayout>
-    <Row style={{ margin: '10px 0 20px 0' }}>
-      <Widget
-        title='Total Students'
-        count='1,550'
-        chart='area'
-        chartdata={studentData}
-      />
-      <Widget
-        title='Total Instructors'
-        count='10'
-        chart='bar'
-        chartdata={studentData}
-      />
-      <Widget
-        title='Total Batches'
-        count='7'
-        chart='area'
-        chartdata={studentData}
+export default () => {
+  return (
+    <MasterLayout>
+      <Row style={{ margin: '10px 0 20px 0' }}>
+        <Widget
+          title='Total Students'
+          count='1,550'
+          chart='area'
+          chartdata={studentData}
+        />
+        <Widget
+          title='Total Instructors'
+          count='10'
+          chart='bar'
+          chartdata={studentData}
+        />
+        <Widget
+          title='Total Batches'
+          count='7'
+          chart='area'
+          chartdata={studentData}
 
-      />
-      <Widget
-        title='Total Students'
-        count='1,550'
-        chart='bar'
-        chartdata={studentData}
+        />
+        <Widget
+          title='Total Students'
+          count='1,550'
+          chart='bar'
+          chartdata={studentData}
 
-      />
-    </Row>
+        />
+      </Row>
 
-    <Row>
-      <Col span={24}>
-        <LineChart data={instructorData} />
-      </Col>
-    </Row>
+      <Row>
+        <Col span={24}>
+          <LineChart data={instructorData} />
+        </Col>
+      </Row>
 
-  </MasterLayout>
-);
+      <Row>
+        <Col span={12}>
+          {/* <BatchCard /> */}
+        </Col>
+        <Col span={12}></Col>
+      </Row>
+    </MasterLayout>
+  )
+};
