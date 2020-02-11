@@ -1,11 +1,18 @@
 import gql from 'graphql-tag';
 
-const GET_SIDEBAR = gql`
+const GET_MENUITEM = gql`
   {
-    sidebar @client
+    menuitem @client
+  }
+`;
+
+const UPDATE_MENUITEM = gql`
+  mutation($menuitem: Int!) {
+    updateMenuitem(menuitem: $menuitem) @client
   }
 `;
 
 export {
-  GET_SIDEBAR
+  GET_MENUITEM,
+  UPDATE_MENUITEM
 }

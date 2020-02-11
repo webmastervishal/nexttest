@@ -1,7 +1,8 @@
 export default {
   Mutation: {
-    setMenuItem: (_root, variables, { cache, getCacheKey }) => {
-
+    updateMenuitem: (_, { menuitem }, { cache }) => {
+      const data = { menuitem, __typename: 'menuitem' };
+      cache.writeData({ data });
     }
   }
 }

@@ -1,10 +1,9 @@
 import { useState, useEffect } from "react";
 import { Layout, Menu, Row, Col, Dropdown, Icon } from "antd";
 import Link from "next/link";
-import { useRouter, Router } from 'next/router';
-import { useQuery } from '@apollo/react-hooks';
+import { useQuery, useMutation } from '@apollo/react-hooks';
 
-import { GET_SIDEBAR } from './../../../apollo/queries';
+import { GET_MENUITEM, UPDATE_MENUITEM } from './../../../apollo/queries';
 import Image from "./../UIElements/image";
 import {
   Logo,
@@ -44,12 +43,11 @@ const dropdownmenu = (
 
 
 const MasterLayout = props => {
-  const { data } = useQuery(GET_SIDEBAR);
-  console.log('data', data);
+  const { data } = useQuery(GET_MENUITEM);
+  const [updateMenuitem] = useMutation(UPDATE_MENUITEM);
   const [collapsed, setCollapsed] = useState(false);
   const [vw, setVW] = useState(0);
-  const [menuitem, setMenuItem] = useState("1");
-  const router = useRouter();
+  const { menuitem } = data;
 
   useEffect(() => {
     window.screen.width <= 992 ? setCollapsed(true) : setCollapsed(false);
@@ -57,7 +55,7 @@ const MasterLayout = props => {
   }, []);
 
   const handleMenuClick = (key) => {
-    setMenuItem(key.key);
+    updateMenuitem({ variables: { menuitem: key.key } });
   }
 
   return (

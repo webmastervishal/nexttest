@@ -10,14 +10,14 @@ const cache = new InMemoryCache();
 //Initial local state
 const initialData = {
   data: {
-    sidebar: "1"
+    menuitem: "1"
   }
 };
 
 cache.writeData(initialData);
 
 const client = new ApolloClient({
-  link: createHttpLink({ uri: 'localhost:4000/graphql', fetch }),
+  link: createHttpLink({ uri: 'http://localhost:3000', fetch }),
   cache,
   resolvers
 });
