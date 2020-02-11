@@ -3,8 +3,8 @@ import { Layout, Menu, Row, Col, Dropdown, Icon } from "antd";
 import Link from "next/link";
 import { useRouter, Router } from 'next/router';
 import { useQuery } from '@apollo/react-hooks';
-import gql from 'graphql-tag';
 
+import { GET_SIDEBAR } from './../../../apollo/queries';
 import Image from "./../UIElements/image";
 import {
   Logo,
@@ -18,12 +18,6 @@ import {
 } from "./style";
 
 const { Footer } = Layout;
-
-const GET_SIDEBAR = gql`
-  {
-    sidebar @client
-  }
-`;
 
 const dropdownmenu = (
   <Menu>
