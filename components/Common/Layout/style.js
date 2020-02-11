@@ -3,7 +3,7 @@ import { Icon, Layout, Menu } from 'antd';
 
 import media from './../media';
 
-const { Item } = Menu;
+const { Item, SubMenu } = Menu;
 const { Sider, Content, Header } = Layout;
 
 const GlobalStyle = createGlobalStyle`
@@ -113,6 +113,12 @@ const MenuItemX = styled(Item)`
     }
 `;
 
+const SubMenuX = styled(SubMenu)`
+    &&&.ant-menu-submenu > .ant-menu {
+      background-color: #123c69;
+    }
+`;
+
 const ContentX = styled(Content)`
     padding: 24px;
     min-height: 280;
@@ -146,6 +152,7 @@ export {
   IconX,
   SiderX,
   MenuItemX,
+  SubMenuX,
   Span,
   ContentX,
   HeaderX,

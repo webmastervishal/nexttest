@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Layout, Menu, Row, Col, Dropdown, Icon } from "antd";
+import { Layout, Menu, Row, Col, Dropdown, Icon, } from "antd";
 import Link from "next/link";
 import { useQuery, useMutation } from '@apollo/react-hooks';
 
@@ -10,6 +10,7 @@ import {
   IconX,
   SiderX,
   MenuItemX,
+  SubMenuX,
   Span,
   ContentX,
   HeaderX,
@@ -89,7 +90,7 @@ const MasterLayout = props => {
               </div>
             </Link>
           </MenuItemX>
-          <MenuItemX key="3" onClick={handleMenuClick}>
+          {/* <MenuItemX key="3" onClick={handleMenuClick}>
             <Link href="/batches">
               <div>
                 <IconX type="book" themed="book" htmlFor="menuicon" />
@@ -97,7 +98,39 @@ const MasterLayout = props => {
 
               </div>
             </Link>
-          </MenuItemX>
+          </MenuItemX> */}
+
+          <SubMenuX
+            key="3"
+            title={
+              <Span>
+                <IconX type="book" themed="book" htmlFor="menuicon" />
+                <Span htmlFor="menuitem">Batches</Span>
+
+              </Span>
+            }
+          >
+            <MenuItemX key="31" onClick={handleMenuClick}>
+              <Link href="/batch/[id]" as="/batch/1">
+                <div>
+                  <IconX type="usergroup-add" themed="usergroup-add" htmlFor="menuicon" />
+                  <Span htmlFor="menuitem">Woodpecker</Span>
+
+                </div>
+              </Link>
+            </MenuItemX>
+
+            <MenuItemX key="32" onClick={handleMenuClick}>
+              <Link href="/batch/[id]" as="/batch/2">
+                <div>
+                  <IconX type="usergroup-add" themed="usergroup-add" htmlFor="menuicon" />
+                  <Span htmlFor="menuitem">Robin</Span>
+
+                </div>
+              </Link>
+            </MenuItemX>
+
+          </SubMenuX>
         </Menu>
       </SiderX>
       <Layout>
