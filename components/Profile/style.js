@@ -1,10 +1,11 @@
-import { Card, List, Typography, Icon, Tabs } from 'antd';
 import styled from "styled-components"
+import { Card, List, Typography, Icon, Tabs } from 'antd';
+import media from './../Common/media';
 
 const { TabPane } = Tabs;
 
 export const Container = styled.div`
-  background-color: #fff;
+    background-color: #fff;
     padding: 36px;
     border-radius: 5px;
 
@@ -21,6 +22,37 @@ export const Container = styled.div`
       width: 200px;
       text-align: left;
     }
+
+    ${media.mobile`
+      background-color:transparent;
+      padding: 0;
+      border-radius: 0;
+
+      .ant-tabs .ant-tabs-left-bar {
+        width: 100% !important;
+        border: 1px solid #e8e8e8;
+        margin-bottom: 20px;
+        background-color: #fff;
+      }
+
+      .ant-tabs .ant-tabs-left-bar .ant-tabs-tab {
+        height: 50px;
+        width: 100%;
+        text-align: left;
+      }
+
+      .ant-tabs .ant-tabs-left-content {
+        border : 1px solid #e8e8e8;
+        background-color: #fff;
+        padding: 10px 15px;
+      }
+
+      .ant-list-item-meta-description {
+        line-height: 20px;
+        font-size: 13px;
+      }
+
+    `}
 `;
 
 export const TabPaneX = styled(TabPane)`
