@@ -28,11 +28,6 @@ const dropdownmenu = (
         </a>
       </Link>
     </Menu.Item>
-    <Menu.Item key="1">
-      <a href="#">
-        <Icon type="setting" /> Change Password
-      </a>
-    </Menu.Item>
     <Menu.Divider />
     <Menu.Item key="3">
       <a href="#">
@@ -90,15 +85,6 @@ const MasterLayout = props => {
               </div>
             </Link>
           </MenuItemX>
-          {/* <MenuItemX key="3" onClick={handleMenuClick}>
-            <Link href="/batches">
-              <div>
-                <IconX type="book" themed="book" htmlFor="menuicon" />
-                <Span htmlFor="menuitem">Batches</Span>
-
-              </div>
-            </Link>
-          </MenuItemX> */}
 
           <SubMenuX
             key="3"

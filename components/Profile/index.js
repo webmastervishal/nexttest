@@ -1,63 +1,105 @@
-// import { Row, Col } from "antd";
-
-// import PersonalInfo from "./PersonalInfo";
-// import ContactDetails from "./ContactDetails";
-// import BatchDetails from "./BatchDetails";
-// import Performance from "./Performance";
-
-// const Profile = () => {
-//   return (
-//     <Row gutter={[{ xs: 8, sm: 16, md: 24, lg: 32 }, 20]}>
-//       <Col className="gutter-row" xs={24} sm={24} md={12} lg={8} xl={8}>
-//         <PersonalInfo />
-//       </Col>
-//       <Col className="gutter-row" xs={24} sm={24} md={12} lg={8} xl={8}>
-//         <ContactDetails />
-//       </Col>
-//       <Col className="gutter-row" xs={24} sm={24} md={12} lg={8} xl={8}>
-//         <BatchDetails />
-//       </Col>
-//       <Col className="gutter-row" xs={24} sm={24} md={12} lg={8} xl={8}>
-//         <Performance />
-//       </Col>
-//     </Row>
-//   );
-// };
-
-// export default Profile;
-
-import { Tabs, Row, Col } from 'antd';
+import { Tabs } from 'antd';
 import { Container, TabPaneX } from './style';
-
-import PersonalInfo from "./PersonalInfo";
-import ContactDetails from "./ContactDetails";
-import BatchDetails from "./BatchDetails";
-import Performance from "./Performance";
+import Content from './Content';
 
 
-class Profile extends React.Component {
+function Profile() {
 
-  render() {
-    return (
-      <Container>
+  const personaldata = [
+    {
+      title: 'Name',
+      subtitle: 'Vishal Shetty',
+      modify: true
+    },
+    {
+      title: 'Gender',
+      subtitle: 'Male',
+      modify: true
+    },
+    {
+      title: 'Phone Number',
+      subtitle: '9028060604',
+      modify: true
+    },
+    {
+      title: 'Email',
+      subtitle: 'vishalshetty1990@gmail.com',
+      modify: true
+    },
+    {
+      title: 'Address',
+      subtitle: 'HSR Layout, Bangalore - 560068',
+      modify: true
+    },
+    {
+      title: 'Github',
+      subtitle: 'https://github.com/',
+      modify: false
+    },
+  ];
 
-        <Tabs tabPosition="left">
-          <TabPaneX tab="Personal Information" key="1" >
-            <h1>Personal Information</h1>
-          </TabPaneX>
+  const batchdata = [
+    {
+      title: 'Batch Name',
+      subtitle: 'Woodpecker',
+      modify: false
+    },
+    {
+      title: 'Instructor Name',
+      subtitle: 'Sundeep',
+      modify: false
+    },
+    {
+      title: 'Start Date',
+      subtitle: '1st Dec 2019',
+      modify: false
+    },
+    {
+      title: 'Instructor Ratings (average)',
+      subtitle: '4.8',
+      modify: false
+    }
+  ];
 
-          <TabPaneX tab="Batch Details" key="3">
-            woodpecker
-          </TabPaneX>
+  const settingdata = [
+    {
+      title: 'Account Password',
+      subtitle: 'Account password status is strong - *****90',
+      modify: true
+    },
+    {
+      title: 'Backup Email',
+      subtitle: 'vi************@****.com',
+      modify: true
+    },
+    {
+      title: 'Security Question',
+      subtitle: 'Name of your first pet?',
+      modify: true
+    }
+  ];
 
-          <TabPaneX tab="Settings" key="2">
-            password
-          </TabPaneX>
+  return (
+    <Container>
 
-        </Tabs>
-      </Container>
-    );
-  }
+      <Tabs tabPosition="left">
+        <TabPaneX tab="Personal Information" key="1" >
+          <Content title="Personal Information" data={personaldata} />
+        </TabPaneX>
+
+        <TabPaneX tab="Batch Details" key="3">
+          <Content title="Batch Information" data={batchdata} />
+        </TabPaneX>
+
+        <TabPaneX tab="Settings" key="2">
+          <Content title="Account Setting" data={settingdata} />
+        </TabPaneX>
+
+      </Tabs>
+
+    </Container>
+  );
+
 }
 
 export default Profile;
