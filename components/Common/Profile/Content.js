@@ -1,5 +1,5 @@
 import { List } from 'antd';
-import Title from './../Common/UIElements/Title';
+import Title from './../UIElements/Title';
 
 function Content(props) {
 

@@ -1,6 +1,6 @@
 import styled from "styled-components"
 import { Card, List, Typography, Icon, Tabs } from 'antd';
-import media from './../Common/media';
+import media from './../media';
 
 const { TabPane } = Tabs;
 
