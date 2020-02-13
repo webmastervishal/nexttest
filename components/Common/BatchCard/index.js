@@ -96,6 +96,7 @@ const BatchCard = (props) => {
                   title="Instructor"
                   value={"Vishal Shetty"}
                   precision={0}
+                  prefix={<Icon type="user" />}
                   valueStyle={{ color: '#123b69' }}
                   suffix=""
                 />
@@ -107,6 +108,7 @@ const BatchCard = (props) => {
                   title="Students"
                   value={155}
                   precision={0}
+                  prefix={<Icon type="usergroup-add" />}
                   valueStyle={{ color: '#123b69' }}
                   suffix=""
                 />
@@ -118,6 +120,7 @@ const BatchCard = (props) => {
                   title="Dropped Out"
                   value={20}
                   precision={0}
+                  prefix={<Icon type="usergroup-delete" />}
                   valueStyle={{ color: '#123b69' }}
                   suffix=""
                 />
@@ -129,6 +132,7 @@ const BatchCard = (props) => {
                   title="Attendance"
                   value={90}
                   precision={0}
+                  prefix={<Icon type="sound" />}
                   valueStyle={{ color: '#123b69' }}
                   suffix="%"
                 />
@@ -140,6 +144,7 @@ const BatchCard = (props) => {
                   title="Instructor Ratings"
                   value={4.8}
                   precision={2}
+                  prefix={<Icon type="line-chart" />}
                   valueStyle={{ color: '#123b69' }}
                   suffix="(avg)"
                 />
@@ -152,6 +157,7 @@ const BatchCard = (props) => {
                   title="Time till Graduation"
                   value={6}
                   precision={0}
+                  prefix={<Icon type="clock-circle" />}
                   valueStyle={{ color: '#123b69' }}
                   suffix="Months"
                 />

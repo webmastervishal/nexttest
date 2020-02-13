@@ -12,6 +12,10 @@ const CardX = styled(Card)`
   .ant-card-extra {
     padding: 0;
   }
+
+  .ant-statistic-content-prefix {
+      float: right !important;
+    }
 `;
 
 export default CardX;
