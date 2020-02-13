@@ -1,6 +1,6 @@
 import { PureComponent } from 'react';
-import { Card, Row, Col } from "antd";
 import { LineChart, Line, CartesianGrid, XAxis, YAxis, Tooltip, Legend, ResponsiveContainer } from "recharts";
+import { CardX } from './../UIElements';
 
 class CustomizedAxisTick extends PureComponent {
   render() {
@@ -17,7 +17,7 @@ class CustomizedAxisTick extends PureComponent {
 }
 
 const LineChartX = (props) => {
-  return <Card title="Instructor Ratings" headStyle={{ fontWeight: 300 }} style={{ boxShadow: '0px 6px 8px #e8e8e8' }}>
+  return <CardX title="Instructor Ratings">
     <ResponsiveContainer width={'100%'} height={300}>
       <LineChart
         width={500}
@@ -36,7 +36,7 @@ const LineChartX = (props) => {
         <Line type="monotone" dataKey="Shahrukh" stroke="#82ca9d" />
       </LineChart>
     </ResponsiveContainer>
-  </Card>;
+  </CardX>;
 };
 
 export default LineChartX;

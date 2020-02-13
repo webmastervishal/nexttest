@@ -9,18 +9,20 @@ export const Container = styled.div`
     padding: 36px;
     border-radius: 5px;
 
-    .ant-tabs-nav .ant-tabs-tab-active {
-      background-color: #123b69;
-      height: 50px;
-      width: 200px;
-      text-align: left;
-      padding: 12px 30px;
-    }
+    &&& {
+      .ant-tabs-nav .ant-tabs-tab-active {
+        background-color: #123b69;
+        height: 50px;
+        width: 200px;
+        text-align: left;
+        padding: 12px 30px;
+      }
 
-    .ant-tabs .ant-tabs-left-bar .ant-tabs-tab {
-      height: 50px;
-      width: 200px;
-      text-align: left;
+      .ant-tabs .ant-tabs-left-bar .ant-tabs-tab {
+        height: 50px;
+        width: 200px;
+        text-align: left;
+      }
     }
 
     ${media.mobile`

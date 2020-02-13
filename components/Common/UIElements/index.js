@@ -3,6 +3,7 @@ import Image from './image';
 import RowX from './Row';
 import Title from './Title';
 import Container from './Container';
+import CardX from './Card';
 
 
 export {
@@ -10,5 +11,6 @@ export {
   Image,
   RowX,
   Title,
-  Container
+  Container,
+  CardX
 }

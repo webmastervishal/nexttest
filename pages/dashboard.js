@@ -107,15 +107,30 @@ export default () => {
 
       <RowX>
         <Col span={24}>
-          <LineChart data={instructorData} />
+          <BatchCard
+            name="Woodpecker Batch"
+            status="normal"
+            startdate="18th Nov 2019"
+          />
         </Col>
       </RowX>
 
       <RowX>
-        <Col span={12}>
-          <BatchCard />
+        <Col span={24}>
+          <BatchCard
+            name="Robin Batch"
+            status="danger"
+            startdate="1st Jan 2020"
+          />
         </Col>
       </RowX>
+
+      <RowX>
+        <Col span={24}>
+          <LineChart data={instructorData} />
+        </Col>
+      </RowX>
+
     </MasterLayout>
   )
 };
