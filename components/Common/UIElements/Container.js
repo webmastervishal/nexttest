@@ -1,7 +1,7 @@
 import styled from 'styled-components';
-import media from "./../components/Common/media"
+import media from "./../media"
 
-export const Container = styled.div`
+const Container = styled.div`
     height: 100vh;
     width: 100vw;
     background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)) 0% 0% / cover no-repeat fixed, url(/images/loginbackground.jpg);
@@ -19,3 +19,5 @@ export const Container = styled.div`
         background-size: 100vw 100vh;
     `}
 `;
+
+export default Container;

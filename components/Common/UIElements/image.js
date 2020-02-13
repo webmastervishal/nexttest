@@ -5,4 +5,4 @@ const Image = styled.img`
     width: ${props => props.width};
 `;
 
-export default Image
+export default Image;

@@ -1,6 +1,8 @@
+import { Col } from "antd";
+import BatchCard from './../components/Common/BatchCard';
 import MasterLayout from "./../components/Common/Layout";
 import { LineChart, Widget } from "../components/Common/Charts";
-import { Row, Col } from "antd";
+import { RowX } from './../components/Common/UIElements';
 
 const instructorData = [
   {
@@ -74,7 +76,7 @@ const studentData = [
 export default () => {
   return (
     <MasterLayout>
-      <Row style={{ margin: '10px 0 20px 0' }}>
+      <RowX>
         <Widget
           title='Total Students'
           count='1,550'
@@ -101,20 +103,19 @@ export default () => {
           chartdata={studentData}
 
         />
-      </Row>
+      </RowX>
 
-      <Row>
+      <RowX>
         <Col span={24}>
           <LineChart data={instructorData} />
         </Col>
-      </Row>
+      </RowX>
 
-      <Row>
+      <RowX>
         <Col span={12}>
-          {/* <BatchCard /> */}
+          <BatchCard />
         </Col>
-        <Col span={12}></Col>
-      </Row>
+      </RowX>
     </MasterLayout>
   )
 };

@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useQuery, useMutation } from '@apollo/react-hooks';
 
 import { GET_MENUITEM, UPDATE_MENUITEM } from './../../../apollo/queries';
-import Image from "./../UIElements/image";
+import { Image } from "./../UIElements";
 import {
   Logo,
   IconX,

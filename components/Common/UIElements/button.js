@@ -12,4 +12,4 @@ const ButtonX = styled(Button)`
 
 `;
 
-export default ButtonX
+export default ButtonX;
