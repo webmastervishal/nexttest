@@ -4,6 +4,8 @@ import styled from 'styled-components';
 const CardX = styled(Card)`
   box-shadow: 0px 6px 8px #e8e8e8;
 
+  ${props => props.height && { height: props.height }}
+
   .ant-card-head {
     font-weight: 300;
     padding: 0 12px;
