@@ -20,6 +20,19 @@ const CardX = styled(Card)`
       float: right !important;
     }
 
+  ${media.laptop`
+    .ant-timeline-item {
+      padding: 0 0 3px;
+      font-size: 14px;
+    }
+  `}
+
+  ${media.tablet`
+    .ant-calendar-picker {
+      width: 230px;
+    }
+  `}
+
   ${media.mobile`
     margin-bottom: 6px;
     height: auto;
@@ -29,10 +42,17 @@ const CardX = styled(Card)`
     }
 
     .ant-card-head-wrapper {
+      flex-direction: column;
       margin: 4px 0;
     }
+
+    .ant-card-extra {
+      margin-left: 0;
+    }
+
     .ant-card-head-title {
       padding: 4px 0;
+      font-size: 14px;
     }
 
     .ant-timeline-item {

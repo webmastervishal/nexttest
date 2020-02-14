@@ -13,6 +13,15 @@ export const Info = styled.p`
       background-color: #fff;
       border-radius: 5px;
       cursor: default;
+
+      ${media.mobile`
+        width: 100%;
+        margin: 10px 0;
+      `}
+
+      ${media.smalldevice`
+        font-size: 13px;
+      `}
 `;
 
 export const Stats = styled.div`
