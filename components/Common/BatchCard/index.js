@@ -95,7 +95,14 @@ const BatchCard = (props) => {
     color: '#fff',
     backgroundColor: props.status === 'normal' ? '#8ec06c' : '#e5505a'
   }
-  return <CardX title={props.name} extra={extra(props)} headStyle={headerStyle}>
+
+  const cardStyle = {
+    borderWidth: '1px',
+    borderStyle: 'solid',
+    borderColor: props.status === 'normal' ? '#8ec06c' : '#e5505a'
+  }
+
+  return <CardX title={props.name} extra={extra(props)} headStyle={headerStyle} style={cardStyle}>
     <Row>
       <Col span={24}>
         <Stats>
