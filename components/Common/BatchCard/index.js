@@ -1,7 +1,7 @@
-import { DatePicker, Row, Col, Table, Statistic, Divider, Timeline, Icon, Card } from 'antd';
+import { DatePicker, Row, Col, Statistic, Divider, Timeline, Icon } from 'antd';
 import moment from 'moment';
 import { CardX } from './../UIElements';
-import { Extra, Info, Stats } from './style';
+import { Extra, Info, Stats, TableX } from './style';
 
 const { RangePicker } = DatePicker;
 
@@ -70,7 +70,7 @@ const extra = (props) => (
 
 const studentlist = () => (
   <CardX title="Underperforming Students" height="360px" headStyle={{ backgroundColor: '#eff2f3' }}>
-    <Table dataSource={dataSource} columns={columns} size="small" />
+    <TableX dataSource={dataSource} columns={columns} size="small" />
   </CardX>
 );
 
@@ -100,75 +100,75 @@ const BatchCard = (props) => {
       <Col span={24}>
         <Stats>
           <Row gutter={16}>
-            <Col span={4}>
+            <Col xs={24} sm={24} md={12} lg={8} xl={4}>
               <CardX bodyStyle={{ padding: '10px' }}>
                 <Statistic
                   title="Instructor"
                   value={"Vishal Shetty"}
                   precision={0}
                   prefix={<Icon type="user" />}
-                  valueStyle={{ color: '#123b69' }}
+                  valueStyle={{ color: '#123b69', fontSize: '20px' }}
                   suffix=""
                 />
               </CardX>
             </Col>
-            <Col span={4}>
-              <CardX bodyStyle={{ padding: '10px' }}>
+            <Col xs={24} sm={24} md={12} lg={8} xl={4}>
+              <CardX bodyStyle={{ padding: '10px', fontSize: '20px' }}>
                 <Statistic
                   title="Students"
                   value={155}
                   precision={0}
                   prefix={<Icon type="usergroup-add" />}
-                  valueStyle={{ color: '#123b69' }}
+                  valueStyle={{ color: '#123b69', fontSize: '20px' }}
                   suffix=""
                 />
               </CardX>
             </Col>
-            <Col span={4}>
+            <Col xs={24} sm={24} md={12} lg={8} xl={4}>
               <CardX bodyStyle={{ padding: '10px' }}>
                 <Statistic
                   title="Dropped Out"
                   value={20}
                   precision={0}
                   prefix={<Icon type="usergroup-delete" />}
-                  valueStyle={{ color: '#123b69' }}
+                  valueStyle={{ color: '#123b69', fontSize: '20px' }}
                   suffix=""
                 />
               </CardX>
             </Col>
-            <Col span={4}>
+            <Col xs={24} sm={24} md={12} lg={8} xl={4}>
               <CardX bodyStyle={{ padding: '10px' }}>
                 <Statistic
                   title="Attendance"
                   value={90}
                   precision={0}
                   prefix={<Icon type="sound" />}
-                  valueStyle={{ color: '#123b69' }}
+                  valueStyle={{ color: '#123b69', fontSize: '20px' }}
                   suffix="%"
                 />
               </CardX>
             </Col>
-            <Col span={4}>
+            <Col xs={24} sm={24} md={12} lg={8} xl={4}>
               <CardX bodyStyle={{ padding: '10px' }}>
                 <Statistic
                   title="Instructor Ratings"
                   value={4.8}
                   precision={2}
                   prefix={<Icon type="line-chart" />}
-                  valueStyle={{ color: '#123b69' }}
+                  valueStyle={{ color: '#123b69', fontSize: '20px' }}
                   suffix="(avg)"
                 />
               </CardX>
             </Col>
 
-            <Col span={4}>
+            <Col xs={24} sm={24} md={12} lg={8} xl={4}>
               <CardX bodyStyle={{ padding: '10px' }}>
                 <Statistic
                   title="Time till Graduation"
                   value={6}
                   precision={0}
                   prefix={<Icon type="clock-circle" />}
-                  valueStyle={{ color: '#123b69' }}
+                  valueStyle={{ color: '#123b69', fontSize: '20px' }}
                   suffix="Months"
                 />
               </CardX>
@@ -179,10 +179,10 @@ const BatchCard = (props) => {
         <Divider />
         <div>
           <Row>
-            <Col span={11} >
+            <Col xs={24} sm={24} md={24} lg={11} xl={11}>
               {lectures()}
             </Col>
-            <Col span={12} offset={1}>
+            <Col xs={24} sm={24} md={24} lg={{ span: 12, offset: 1 }} xl={{ span: 12, offset: 1 }} >
               {studentlist()}
             </Col>
           </Row>

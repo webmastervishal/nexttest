@@ -56,6 +56,10 @@ const togglemenu = css`
     :hover {
         color: #1890ff;
     }
+
+    ${media.mobile`
+      display: none;
+    `}
 `;
 
 const usericon = css`
