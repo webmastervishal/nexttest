@@ -8,7 +8,7 @@ const batches = () => {
   const [visible, setVisible] = useState(false);
   return <MasterLayout>
     <RowX>
-      <Col offset={22} span={2}>
+      <Col md={{ offset: 20, span: 2 }} xs={{ offset: 14, span: 2 }} sm={{ offset: 12, span: 2 }} xl={{ offset: 21, span: 2 }} >
         <Button type="primary" size="large" style={{ color: 'rgb(19, 60, 105)' }} onClick={() => setVisible(true)}> New Batch </Button>
         <Modal
           title="Add New Batch"
@@ -70,7 +70,7 @@ const batches = () => {
         />
       </Col>
     </RowX>
-  </MasterLayout>
+  </MasterLayout >
 
 }
 
