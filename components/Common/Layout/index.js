@@ -86,37 +86,15 @@ const MasterLayout = props => {
             </Link>
           </MenuItemX>
 
-          <SubMenuX
-            key="3"
-            title={
-              <Span>
-                <IconX type="book" themed="book" htmlFor="menuicon" />
+          <MenuItemX key="3" onClick={handleMenuClick}>
+            <Link href="/batches" as="/batches">
+              <div>
+                <IconX type="usergroup-add" themed="usergroup-add" htmlFor="menuicon" />
                 <Span htmlFor="menuitem">Batches</Span>
 
-              </Span>
-            }
-          >
-            <MenuItemX key="31" onClick={handleMenuClick}>
-              <Link href="/batch/[id]" as="/batch/1">
-                <div>
-                  <IconX type="usergroup-add" themed="usergroup-add" htmlFor="menuicon" />
-                  <Span htmlFor="menuitem">Woodpecker</Span>
-
-                </div>
-              </Link>
-            </MenuItemX>
-
-            <MenuItemX key="32" onClick={handleMenuClick}>
-              <Link href="/batch/[id]" as="/batch/2">
-                <div>
-                  <IconX type="usergroup-add" themed="usergroup-add" htmlFor="menuicon" />
-                  <Span htmlFor="menuitem">Robin</Span>
-
-                </div>
-              </Link>
-            </MenuItemX>
-
-          </SubMenuX>
+              </div>
+            </Link>
+          </MenuItemX>
         </Menu>
       </SiderX>
       <Layout>
