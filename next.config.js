@@ -36,4 +36,50 @@ module.exports = withLess({
     }
     return config
   },
+  exportTrailingSlash: true,
+  exportPathMap: async function () {
+    const paths = {
+      '/': { page: '/' },
+      '/batches': { page: '/batches' },
+      '/dashboard': { page: '/dashboard' },
+      '/students': { page: '/students' },
+    };
+
+    //this is temporary batches data - actual data will come from the api
+    batches = [{
+      id: 5,
+      name: 'Flamingo'
+    }, {
+      id: 6,
+      name: 'Woodpecker'
+    }, {
+      id: 7,
+      name: 'Robin'
+    }];
+
+    batches.forEach(batch => {
+      paths[`/batch/${batch.id}`] = { page: '/batch/[id]', query: { id: batch.id } };
+    });
+
+    //this is temporary student data - actual data will come from the api
+    students = [{
+      id: 1,
+      name: 'Vishal Shetty'
+    }, {
+      id: 2,
+      name: 'Shahrukh'
+    }, {
+      id: 3,
+      name: 'Rahul Kumar'
+    }, {
+      id: 4,
+      name: 'Ruhan'
+    }];
+
+    students.forEach(student => {
+      paths[`/student/${student.id}`] = { page: '/student/[id]', query: { id: student.id } };
+    });
+
+    return paths;
+  }
 })
