@@ -67,6 +67,9 @@ const CardX = styled(Card)`
     .ant-statistic-content {
       font-size: 16px;
     }
+
+
+
   `}
 `;
 
