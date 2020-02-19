@@ -1,3 +1,6 @@
 import MasterLayout from "./../components/Common/Layout";
+import StudentList from "./../components/StudentList";
 
-export default () => <MasterLayout><p>Student page</p></MasterLayout>
+export default () => <MasterLayout>
+  <StudentList />
+</MasterLayout>
