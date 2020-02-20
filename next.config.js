@@ -1,13 +1,13 @@
-const withLess = require('@zeit/next-less')
-const lessToJS = require('less-vars-to-js')
-const fs = require('fs')
-const path = require('path')
+require('dotenv').config();
+const withLess = require('@zeit/next-less');
+const lessToJS = require('less-vars-to-js');
+const fs = require('fs');
+const path = require('path');
 
 // Where your antd-custom.less file lives
 const themeVariables = lessToJS(
   fs.readFileSync(path.resolve(__dirname, './public/antd-custom.less'), 'utf8')
 )
-
 module.exports = withLess({
   lessLoaderOptions: {
     javascriptEnabled: true,
@@ -81,5 +81,8 @@ module.exports = withLess({
     });
 
     return paths;
+  },
+  env: {
+    API_URL: process.env.API_URL
   }
 })

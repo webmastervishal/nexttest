@@ -28,6 +28,7 @@
   },
   "devDependencies": {
     "@zeit/next-less": "^1.0.1",
-    "babel-plugin-styled-components": "^1.10.6"
+    "babel-plugin-styled-components": "^1.10.6",
+    "dotenv": "^8.2.0"
   }
 }

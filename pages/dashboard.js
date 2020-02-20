@@ -74,6 +74,7 @@ const studentData = [
 ];
 
 export default () => {
+
   return (
     <MasterLayout>
       <RowX>
