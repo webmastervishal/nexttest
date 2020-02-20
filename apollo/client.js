@@ -8,7 +8,7 @@ import resolvers from './resolvers';
 
 const cache = new InMemoryCache();
 const client = new ApolloClient({
-  link: createHttpLink({ uri: 'http://localhost:3000', fetch }),
+  link: createHttpLink({ uri: process.env.API_URL, fetch }),
   cache,
   resolvers
 });

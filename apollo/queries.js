@@ -12,7 +12,19 @@ const UPDATE_MENUITEM = gql`
   }
 `;
 
+const USER_LOGIN = gql`
+  mutation($email: String!, $password: String!){
+  login(data:{email:$email,password:$password})  {
+    success
+    token
+    message
+    userId
+  }
+}
+`;
+
 export {
   GET_MENUITEM,
-  UPDATE_MENUITEM
+  UPDATE_MENUITEM,
+  USER_LOGIN
 }
