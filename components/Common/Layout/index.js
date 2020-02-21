@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Layout, Menu, Row, Col, Dropdown, Icon, } from "antd";
 import Link from "next/link";
+import { useRouter } from 'next/router';
 import { useQuery, useMutation } from '@apollo/react-hooks';
 
 import { GET_MENUITEM, UPDATE_MENUITEM } from './../../../apollo/queries';
@@ -30,29 +31,25 @@ const dropdownmenu = (
     </Menu.Item>
     <Menu.Divider />
     <Menu.Item key="3">
-      <a href="#">
-        <Icon type="logout" /> Logout
-      </a>
+      <Link href="/logout">
+        <a>
+          <Icon type="logout" /> Logout
+        </a>
+      </Link>
     </Menu.Item>
   </Menu>
 );
 
 
 const MasterLayout = props => {
-  const { data } = useQuery(GET_MENUITEM);
-  const [updateMenuitem] = useMutation(UPDATE_MENUITEM);
+  const router = useRouter();
   const [collapsed, setCollapsed] = useState(false);
   const [vw, setVW] = useState(0);
-  const { menuitem } = data;
 
   useEffect(() => {
     window.screen.width <= 992 ? setCollapsed(true) : setCollapsed(false);
     setVW(window.screen.width);
   }, []);
-
-  const handleMenuClick = (key) => {
-    updateMenuitem({ variables: { menuitem: key.key } });
-  }
 
   return (
     <Layout style={{ height: '100vh' }}>
@@ -65,10 +62,10 @@ const MasterLayout = props => {
         </Link>
         <Menu
           mode="inline"
-          defaultSelectedKeys={[menuitem]}
+          selectedKeys={[router.pathname]}
           style={{ backgroundColor: "#123c69" }}
         >
-          <MenuItemX key="1" onClick={handleMenuClick}>
+          <MenuItemX key="/dashboard" >
             <Link href="/dashboard">
               <div>
                 <IconX type="home" theme="filled" htmlFor="menuicon" />
@@ -76,7 +73,7 @@ const MasterLayout = props => {
               </div>
             </Link>
           </MenuItemX>
-          <MenuItemX key="2" onClick={handleMenuClick}>
+          <MenuItemX key="/students" >
             <Link href="/students">
               <div>
                 <IconX type="user" themed="filled" htmlFor="menuicon" />
@@ -86,7 +83,7 @@ const MasterLayout = props => {
             </Link>
           </MenuItemX>
 
-          <MenuItemX key="3" onClick={handleMenuClick}>
+          <MenuItemX key="/batches">
             <Link href="/batches" as="/batches">
               <div>
                 <IconX type="usergroup-add" themed="usergroup-add" htmlFor="menuicon" />

@@ -51,7 +51,7 @@ export const LogoContainer = styled.div`
 
 export const FormContainer = styled.div`
   position: absolute;
-  top: 180px;
+  top: 150px;
   height: 290px;
   margin: 20px;
   width: 360px;

@@ -1,4 +1,5 @@
 import { Col } from "antd";
+import auth from './../utils/auth';
 import BatchCard from './../components/Common/BatchCard';
 import MasterLayout from "./../components/Common/Layout";
 import { LineChart, Widget } from "../components/Common/Charts";
@@ -73,7 +74,8 @@ const studentData = [
   },
 ];
 
-export default () => {
+const Dashboard = () => {
+
   return (
     <MasterLayout>
       <RowX>
@@ -134,3 +136,10 @@ export default () => {
     </MasterLayout>
   )
 };
+
+Dashboard.getInitialProps = (ctx) => {
+  const token = auth(ctx);
+  return { token };
+}
+
+export default Dashboard;

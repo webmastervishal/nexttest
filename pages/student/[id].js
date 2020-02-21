@@ -1,7 +1,8 @@
 import { useRouter } from 'next/router';
+import auth from './../../utils/auth';
 import MasterLayout from "./../../components/Common/Layout";
 
-export default () => {
+const Student = () => {
   const router = useRouter();
   const { id } = router.query;
 
@@ -11,3 +12,10 @@ export default () => {
     </MasterLayout>
   );
 }
+
+Student.getInitialProps = (ctx) => {
+  const token = auth(ctx);
+  return { token };
+}
+
+export default Student;
