@@ -6,8 +6,10 @@ const auth = (ctx) => {
 
   if (!token) {
     if (typeof window === 'undefined') {
-      ctx.res.writeHead(302, { Location: '/' });
-      ctx.res.end();
+      if (typeof ctx.res.writeHead === 'function') {
+        ctx.res.writeHead(302, { Location: '/' });
+        ctx.res.end();
+      }
     } else {
       Router.push('/');
     }
