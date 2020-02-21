@@ -1,10 +1,11 @@
 import { Col, Button, Modal, Form, Input, DatePicker } from 'antd';
 import { useState } from 'react';
+import auth from './../utils/auth';
 import { RowX } from './../components/Common/UIElements';
 import BatchCard from './../components/Common/BatchCard';
 import MasterLayout from './../components/Common/Layout';
 
-const batches = () => {
+const Batches = () => {
   const [visible, setVisible] = useState(false);
   return <MasterLayout>
     <RowX>
@@ -74,5 +75,9 @@ const batches = () => {
 
 }
 
+Batches.getInitialProps = (ctx) => {
+  const token = auth(ctx);
+  return { token };
+}
 
-export default batches;
+export default Batches;

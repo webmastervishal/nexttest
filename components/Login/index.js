@@ -1,7 +1,9 @@
 import Link from "next/link";
+import Router from 'next/router'
 import { useState } from 'react';
 import { useMutation } from '@apollo/react-hooks';
 import { Form, Alert } from 'antd';
+import cookie from 'js-cookie';
 import {
   Container,
   LogoContainer,
@@ -19,13 +21,17 @@ const LoginForm = () => {
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-
   const [login, { loading, error, data }] = useMutation(USER_LOGIN);
 
   const userlogin = (e) => {
     e.preventDefault();
 
     login({ variables: { email, password } });
+  }
+
+  if (data && data.login.success) {
+    cookie.set('token', data.login.token);
+    Router.push('/dashboard');
   }
 
   return (

@@ -31,9 +31,11 @@ const dropdownmenu = (
     </Menu.Item>
     <Menu.Divider />
     <Menu.Item key="3">
-      <a href="#">
-        <Icon type="logout" /> Logout
-      </a>
+      <Link href="/logout">
+        <a>
+          <Icon type="logout" /> Logout
+        </a>
+      </Link>
     </Menu.Item>
   </Menu>
 );
