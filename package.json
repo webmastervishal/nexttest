@@ -26,7 +26,8 @@
     "dev": "next",
     "build": "next build",
     "export": "next export",
-    "deploy": "yarn build && yarn export"
+    "start": "next start",
+    "deploy": "yarn build && yarn start"
   },
   "devDependencies": {
     "@zeit/next-less": "^1.0.1",
